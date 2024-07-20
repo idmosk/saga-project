@@ -1,0 +1,4 @@
+io.github.idmosk.saga.autoconfigure.CreatorAutoConfiguration
+io.github.idmosk.saga.autoconfigure.RepeaterAutoConfiguration
+io.github.idmosk.saga.autoconfigure.RouterAutoConfiguration
+io.github.idmosk.saga.autoconfigure.RunnerAutoConfiguration

@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "io.github.idmosk.saga.api.creator.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Enables creator."
+    },
+    {
+      "name": "io.github.idmosk.saga.api.router.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Enables router."
+    },
+    {
+      "name": "io.github.idmosk.saga.api.runner.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Enables runner."
+    },
+    {
+      "name": "io.github.idmosk.saga.api.repeater.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Enables repeater."
+    }
+  ]
+}
