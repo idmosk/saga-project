@@ -337,7 +337,6 @@ abstract class SpiTest {
             supervisorJob.join()
         }
 
-    // not determined!
     @Test
     @OptIn(ObsoleteCoroutinesApi::class)
     fun multipleSagasResultReceivers(): Unit =

@@ -2,10 +2,12 @@
 
 # Description
 
-Tests for your implementation [SPI queues](../spi-queue) and a bench implementation of SPI with its testing.
+Tests for your implementation [SPI queu
+
+es](../spi-queue) and a bench implementation of SPI with its testing.
 
 When testing your implementation, you should also inherit
-[`abstract class SpiTest`](../spi-queue-test/src/main/kotlin/org/dm/saga/queue/SpiTest.kt) to check the correctness
+[`abstract class SpiTest`](../spi-queue-test/src/main/kotlin/io/github/idmosk/saga/queue/SpiTest.kt) to check the correctness
 work.
 
 ---
