@@ -151,7 +151,6 @@ class ApiTest {
             runner.stop()
         }
 
-    // not determined!
     @Test
     fun notEnabledRunnerTest(): Unit =
         runBlocking {
@@ -209,7 +208,6 @@ class ApiTest {
             router.stop()
         }
 
-    // not determined!
     @Test
     fun deadLineSoonTest(): Unit =
         runBlocking {

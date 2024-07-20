@@ -17,12 +17,12 @@ Components and possible settings:
     and task execution results (default: `1`)
 - Runner
   - `io.github.idmosk.saga.api.runner.enabled` - enables initialization of runner with queue provider found in the Spring context
-    and interface implementations [`ISaga`](../api/src/main/kotlin/org/dm/saga/api/ISaga.kt) (default: `false`)
+    and interface implementations [`ISaga`](../api/src/main/kotlin/io/github/idmosk/saga/api/ISaga.kt) (default: `false`)
   - `io.github.idmosk.saga.api.runner.allMethodsAreEnabled` - whether all public methods need to be considered in the found implementations
-    interface [`ISaga`](../api/src/main/kotlin/org/dm/saga/api/ISaga.kt) as methods for executing saga steps
+    interface [`ISaga`](../api/src/main/kotlin/io/github/idmosk/saga/api/ISaga.kt) as methods for executing saga steps
     (default: `false`)
   - `io.github.idmosk.saga.api.runner.concurrencyForAllMethods` - concurrency for each method of the found implementations
-    interface [`ISaga`](../api/src/main/kotlin/org/dm/saga/api/ISaga.kt), with which the runner will perform steps
+    interface [`ISaga`](../api/src/main/kotlin/io/github/idmosk/saga/api/ISaga.kt), with which the runner will perform steps
     sag (default: `1`)
   - `io.github.idmosk.saga.api.runner.enabledMethods` - method:concurrency pairs separated by commas for fine tuning (default:
     `[]`, example:

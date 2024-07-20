@@ -5,7 +5,7 @@
 Tests for your implementation [SPI storages](../spi-storage) and a bench implementation of SPI with its testing.
 
 When testing your implementation, you should also inherit
-[`abstract class SpiTest`](src/main/kotlin/org/dm/saga/storage/SpiTest.kt) to check the correctness
+[`abstract class SpiTest`](src/main/kotlin/io/github/idmosk/saga/storage/SpiTest.kt) to check the correctness
 work.
 
 ---
