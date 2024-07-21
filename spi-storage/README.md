@@ -7,3 +7,21 @@ SPI storages.
 See javadoc.
 
 It is highly advisable to check the resulting implementation using already written [tests](../spi-storage-test) .
+
+# Usage
+
+maven
+
+```maven
+<dependency>
+  <groupId>io.github.idmosk.saga</groupId>
+  <artifactId>spi-storage-test</artifactId>
+  <version>0.1.0</version>
+</dependency>
+```
+
+gradle
+
+```gradle
+implementation("io.github.idmosk.saga:spi-storage-test:0.1.0")
+```
