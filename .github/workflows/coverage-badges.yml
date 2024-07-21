@@ -1,0 +1,86 @@
+name: Create coverage badges
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Generate coverage outputs
+        run: |
+          echo "COVERAGE_API=$(${{github.workspace}}/gradlew -q :api:printLineCoverage)" >> $GITHUB_ENV
+          echo "COVERAGE_SPI_QUEUE_TEST=$(${{github.workspace}}/gradlew -q :spi-queue-test:printLineCoverage)" >> $GITHUB_ENV
+          echo "COVERAGE_SPI_STORAGE_TEST=$(${{github.workspace}}/gradlew -q :spi-storage-test:printLineCoverage)" >> $GITHUB_ENV
+          echo "COVERAGE_API_SPRING_BOOT_STARTER_V2=$(${{github.workspace}}/gradlew -q :api-spring-boot-starter-v2:printLineCoverage)" >> $GITHUB_ENV
+          echo "COVERAGE_API_SPRING_BOOT_STARTER_V3=$(${{github.workspace}}/gradlew -q :api-spring-boot-starter-v3:printLineCoverage)" >> $GITHUB_ENV
+
+      - name: Update dynamic badge api gist
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{secrets.GIST_SECRET}}
+          gistID: 4db605570a25e36c5611e58a07edbb80
+          filename: saga-project-coverage-api-badge.json
+          label: coverage
+          message: ${{env.COVERAGE_API}}%
+          valColorRange: ${{env.COVERAGE_API}}
+          minColorRange: 0
+          maxColorRange: 100
+
+      - name: Update dynamic badge spi-queue-test gist
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{secrets.GIST_SECRET}}
+          gistID: 4db605570a25e36c5611e58a07edbb80
+          filename: saga-project-coverage-spi-queue-test-badge.json
+          label: coverage
+          message: ${{env.COVERAGE_SPI_QUEUE_TEST}}%
+          valColorRange: ${{env.COVERAGE_SPI_QUEUE_TEST}}
+          minColorRange: 0
+          maxColorRange: 100
+
+      - name: Update dynamic badge spi-storage-test gist
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{secrets.GIST_SECRET}}
+          gistID: 4db605570a25e36c5611e58a07edbb80
+          filename: saga-project-coverage-spi-storage-test-badge.json
+          label: coverage
+          message: ${{env.COVERAGE_SPI_STORAGE_TEST}}%
+          valColorRange: ${{env.COVERAGE_SPI_STORAGE_TEST}}
+          minColorRange: 0
+          maxColorRange: 100
+
+      - name: Update dynamic badge api-spring-boot-starter-v2 gist
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{secrets.GIST_SECRET}}
+          gistID: 4db605570a25e36c5611e58a07edbb80
+          filename: saga-project-coverage-api-spring-boot-starter-v2-badge.json
+          label: coverage
+          message: ${{env.COVERAGE_API_SPRING_BOOT_STARTER_V2}}%
+          valColorRange: ${{env.COVERAGE_API_SPRING_BOOT_STARTER_V2}}
+          minColorRange: 0
+          maxColorRange: 100
+
+      - name: Update dynamic badge api-spring-boot-starter-v3 gist
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{secrets.GIST_SECRET}}
+          gistID: 4db605570a25e36c5611e58a07edbb80
+          filename: saga-project-coverage-api-spring-boot-starter-v3-badge.json
+          label: coverage
+          message: ${{env.COVERAGE_API_SPRING_BOOT_STARTER_V3}}%
+          valColorRange: ${{env.COVERAGE_API_SPRING_BOOT_STARTER_V3}}
+          minColorRange: 0
+          maxColorRange: 100
