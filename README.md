@@ -15,6 +15,10 @@ The implementation is closest to the pattern
 - [Spring boot starter (v2) for API to use in your spring application](api-spring-boot-starter-v2) [![javadoc](https://javadoc.io/badge2/io.github.idmosk.saga.spring-boot-2/api-spring-boot-starter/javadoc.svg)](https://javadoc.io/doc/io.github.idmosk.saga.spring-boot-2/api-spring-boot-starter) ![coverage badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/idmosk/4db605570a25e36c5611e58a07edbb80/raw/saga-project-coverage-api-spring-boot-starter-v2-badge.json)
 - [Spring boot starter (v3) for API to use in your spring application](api-spring-boot-starter-v3) [![javadoc](https://javadoc.io/badge2/io.github.idmosk.saga.spring-boot-3/api-spring-boot-starter/javadoc.svg)](https://javadoc.io/doc/io.github.idmosk.saga.spring-boot-3/api-spring-boot-starter) ![coverage badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/idmosk/4db605570a25e36c5611e58a07edbb80/raw/saga-project-coverage-api-spring-boot-starter-v3-badge.json)
 
+# How it works in pictures
+
+TODO
+
 # Usage
 
 ## Kotlin application
@@ -70,6 +74,16 @@ gradle
 ```gradle
 implementation("io.github.idmosk.saga.spring-boot-3:api-spring-boot-starter:0.1.0")
 ```
+
+# Demo stand
+
+[demo-saga-project](http://github.com/idmosk/demo-saga-project/tree/master)
+
+# Roadmap
+
+- More flexible [new saga builder](io.github.idmosk.saga.api.creator.NewSaga.Builder). Flexible retry and timeout policies (per step)
+- Declaring sagas steps and steps policies using annotations and annotation parameters instead of [addStep](io.github.idmosk.saga.api.creator.NewSaga.Builder.addStep), [retries](io.github.idmosk.saga.api.creator.NewSaga.Builder.retries), [retriesTimeout](io.github.idmosk.saga.api.creator.NewSaga.Builder.retriesTimeout)
+- Abandoning the concept of steps. One step forward - one step back. Go to actions and counter actions. One action can have 0...n counteractions
 
 ---
 
