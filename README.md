@@ -82,7 +82,15 @@ implementation("io.github.idmosk.saga.spring-boot-3:api-spring-boot-starter:0.1.
 # Roadmap
 
 - More flexible [new saga builder](io.github.idmosk.saga.api.creator.NewSaga.Builder). Flexible retry and timeout policies (per step)
-- Declaring sagas steps and steps policies using annotations and annotation parameters instead of [addStep](io.github.idmosk.saga.api.creator.NewSaga.Builder.addStep), [retries](io.github.idmosk.saga.api.creator.NewSaga.Builder.retries), [retriesTimeout](io.github.idmosk.saga.api.creator.NewSaga.Builder.retriesTimeout)
+- Declaring sagas, sagas steps, steps execution concurrency and steps retry policies using annotations and annotation parameters instead of implementation of [ISaga](io.github.idmosk.saga.api.ISaga), usage [addStep](io.github.idmosk.saga.api.creator.NewSaga.Builder.addStep), [retries](io.github.idmosk.saga.api.creator.NewSaga.Builder.retries), [retriesTimeout](io.github.idmosk.saga.api.creator.NewSaga.Builder.retriesTimeout) methods and concurrency properties parameters [1](api-spring-boot-starter-v2/README.md:24) [2](api-spring-boot-starter-v2/README.md:27)
+- Support a companion object for saga with business payloads and pass them to [NewSaga Builder](io.github.idmosk.saga.api.creator.NewSaga.Builder) instead of the simple `businessId`.
+
+*Serializing and storing the object in storage next to other saga meta information and further deserializing and passing them from the router through the runner to the saga methods as parameters instead of passing a simple `businessId`.*
+
+*This way, the user application will be freed from the need to store the saga payload and retrieve it by `businessId`. All payload will be saved by library and passing to saga step.*
+
+*At each step of the saga, the payload can change depending on the result of the execution, and the changed payload will be stored by the router.*
+
 - Abandoning the concept of steps. One step forward - one step back. Go to actions and counter actions. One action can have 0...n counteractions
 
 ---
