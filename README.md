@@ -23,7 +23,7 @@ The implementation is closest to the pattern
 
 ## Kotlin application
 
-maven
+### maven
 
 ```maven
 <dependency>
@@ -33,7 +33,7 @@ maven
 </dependency>
 ```
 
-gradle
+### gradle
 
 ```gradle
 implementation("io.github.idmosk.saga:api:0.1.0")
@@ -41,7 +41,7 @@ implementation("io.github.idmosk.saga:api:0.1.0")
 
 ## Spring boot v2 application
 
-maven
+### maven
 
 ```maven
 <dependency>
@@ -51,7 +51,7 @@ maven
 </dependency>
 ```
 
-gradle
+### gradle
 
 ```gradle
 implementation("io.github.idmosk.saga.spring-boot-2:api-spring-boot-starter:0.1.0")
@@ -59,7 +59,7 @@ implementation("io.github.idmosk.saga.spring-boot-2:api-spring-boot-starter:0.1.
 
 ## Spring boot v3 application
 
-maven
+### maven
 
 ```maven
 <dependency>
@@ -69,7 +69,7 @@ maven
 </dependency>
 ```
 
-gradle
+### gradle
 
 ```gradle
 implementation("io.github.idmosk.saga.spring-boot-3:api-spring-boot-starter:0.1.0")
