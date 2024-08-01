@@ -17,7 +17,7 @@ The implementation is closest to the pattern
 
 # How it works in pictures
 
-TODO
+<img src="./saga.svg">
 
 # Usage
 
