@@ -81,9 +81,9 @@ implementation("io.github.idmosk.saga.spring-boot-3:api-spring-boot-starter:0.1.
 
 # Roadmap
 
-- More flexible [new saga builder](io.github.idmosk.saga.api.creator.NewSaga.Builder). Flexible retry and timeout policies (per step)
-- Declaring sagas, sagas steps, steps execution concurrency and steps retry policies using annotations and annotation parameters instead of implementation of [ISaga](io.github.idmosk.saga.api.ISaga), usage [addStep](io.github.idmosk.saga.api.creator.NewSaga.Builder.addStep), [retries](io.github.idmosk.saga.api.creator.NewSaga.Builder.retries), [retriesTimeout](io.github.idmosk.saga.api.creator.NewSaga.Builder.retriesTimeout) methods and concurrency properties parameters [1](api-spring-boot-starter-v2/README.md:24) [2](api-spring-boot-starter-v2/README.md:27)
-- Support a companion object for saga with business payloads and pass them to [NewSaga Builder](io.github.idmosk.saga.api.creator.NewSaga.Builder) instead of the simple `businessId`.
+- More flexible [new saga builder](./api/src/main/kotlin/io/github/idmosk/saga/api/creator/NewSaga.kt#L42). Flexible retry and timeout policies (per step)
+- Declaring sagas, sagas steps, steps execution concurrency and steps retry policies using annotations and annotation parameters instead of implementation of [ISaga](./api/src/main/kotlin/io/github/idmosk/saga/api/ISaga.kt), usage [addStep](./api/src/main/kotlin/io/github/idmosk/saga/api/creator/NewSaga.kt#L54), [retries](./api/src/main/kotlin/io/github/idmosk/saga/api/creator/NewSaga.kt#L103), [retriesTimeout](./api/src/main/kotlin/io/github/idmosk/saga/api/creator/NewSaga.kt#L105) methods and concurrency properties parameters [1](api-spring-boot-starter-v2/README.md#L24) [2](api-spring-boot-starter-v2/README.md#L27)
+- Support a companion object for saga with business payloads and pass them to [NewSaga Builder](./api/src/main/kotlin/io/github/idmosk/saga/api/creator/NewSaga.kt#L42) instead of the simple `businessId`.
 
 *Serializing and storing the object in storage next to other saga meta information and further deserializing and passing them from the router through the runner to the saga methods as parameters instead of passing a simple `businessId`.*
 
